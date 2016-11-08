@@ -1,0 +1,6 @@
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\InClassWeek2\InClassWeek2\bin\Debug\InClassWeek2.exe.config
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\InClassWeek2\InClassWeek2\bin\Debug\InClassWeek2.exe
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\InClassWeek2\InClassWeek2\bin\Debug\InClassWeek2.pdb
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\InClassWeek2\InClassWeek2\obj\Debug\InClassWeek2.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\InClassWeek2\InClassWeek2\obj\Debug\InClassWeek2.exe
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\InClassWeek2\InClassWeek2\obj\Debug\InClassWeek2.pdb

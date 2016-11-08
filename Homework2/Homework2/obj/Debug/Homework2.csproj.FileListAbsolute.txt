@@ -1,0 +1,6 @@
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\Homework2\Homework2\bin\Debug\Homework2.exe.config
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\Homework2\Homework2\obj\Debug\Homework2.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\Homework2\Homework2\bin\Debug\Homework2.exe
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\Homework2\Homework2\bin\Debug\Homework2.pdb
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\Homework2\Homework2\obj\Debug\Homework2.exe
+\\Mac\Home\Documents\Visual Studio 2015\Projects\C# class Mario\Homework2\Homework2\obj\Debug\Homework2.pdb
