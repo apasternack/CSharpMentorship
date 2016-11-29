@@ -1,0 +1,13 @@
+Hands-On Exercise: Free Vending Machine
+•You are being tasked with creating a program that represents the software for a vending machine.
+•The vending machine stores only 10 products. Therefore, you will need an array that stores the names of the products: “Snickers Bar”, “Puppy”, “Cat”, “Vegan Pizza”, “Kevin Mack Sticker”, “Vince Fabro Bobblehead”, “SharePoint Rules Decal”, “C# Coffee Mug”, “Xbox One”, “PS4”.
+•The program lists all options from the vending machine, along with their index.
+•The program will ask the user for the index of the item to dispense. If the index is valid, the message “Dispending <product-name>…” is displayed.
+•If the user enters an index higher than the number of products, you must catch the IndexOutOfRangeException that gets thrown. You may not check for the length of the array.
+–The program will sound an alarm, output a message telling the user security has been called, and immediately exit.
+–Write the following code to play the alarm:
+•var alarmPlayer = new SoundPlayer(Environment.CurrentDirectory + @”\alarm.wav”);
+•alarmPlayer.Play();
+•Your technical lead has informed you that must use the Int32.Parse() method to convert integers from a string, and handle the appropriate FormatException. He has ordered you that you should play execute the statement SystemSounds.Exclamation.Play();, show an error message, and immediately exit the program
+•SystemSounds and SoundPlayer are in the System.Media namespace (System.dll). Make sure it’s referenced.
+•Copy the provided alarm.wav file to the root of your project within Visual Studio. Views its properties and set its “Copy to Output Directory” property to “Copy always”. Make sure the Build Action is set to “Content”.
