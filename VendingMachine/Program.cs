@@ -2,6 +2,7 @@
 using System;
 // using System.Media;
 
+
 namespace ConsoleApplication
 {
     public class Program
@@ -38,7 +39,7 @@ namespace ConsoleApplication
 
             try
             {
-                Console.Write("Dispensing {0}", products[userSelection]);
+                Console.Write("\nDispensing {0}\n\n", products[userSelection]);
             }
             catch (IndexOutOfRangeException e)
             {
