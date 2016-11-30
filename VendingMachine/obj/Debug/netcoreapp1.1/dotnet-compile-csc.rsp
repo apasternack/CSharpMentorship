@@ -82,4 +82,6 @@
 -r:"/Users/apasternack/.nuget/packages/System.Threading.Timer/4.3.0/ref/netstandard1.2/System.Threading.Timer.dll"
 -r:"/Users/apasternack/.nuget/packages/System.Xml.ReaderWriter/4.3.0/ref/netstandard1.3/System.Xml.ReaderWriter.dll"
 -r:"/Users/apasternack/.nuget/packages/System.Xml.XDocument/4.3.0/ref/netstandard1.3/System.Xml.XDocument.dll"
+"/Users/apasternack/Documents/Visual Studio 2015/Projects/C# class Mario/VendingMachine/ExtentionMethodForEachWithIndexAccessible.cs"
 "/Users/apasternack/Documents/Visual Studio 2015/Projects/C# class Mario/VendingMachine/Program.cs"
+"/Users/apasternack/Documents/Visual Studio 2015/Projects/C# class Mario/VendingMachine/ProgramExtentionMethodsExtendingAClass.cs"
