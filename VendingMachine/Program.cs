@@ -11,7 +11,7 @@ namespace ConsoleApplication
             
             
             
-            Console.WriteLine(products[1]);
+            Console.WriteLine(products[10]);
         }
     }
 }
