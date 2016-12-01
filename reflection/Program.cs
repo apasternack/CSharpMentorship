@@ -9,10 +9,23 @@ namespace ReflectionTest
     {
         static void Main(string[] args)
         {
-            string test = "test";
-            Console.WriteLine(test.GetType().FullName);
-            Console.WriteLine(typeof(Int32).FullName);
+            // Assembly assembly = Assembly.GetExecutingAssembly();
+            Assembly assembly = typeof(Program).GetTypeInfo().Assembly;
+
+            Type[] assemblyTypes = assembly.GetTypes();
+            foreach(Type t in assemblyTypes)
+                Console.WriteLine(t.Name);
             Console.ReadKey();
         }
+    }
+
+    class DummyClass
+    {
+        //Just here to make the output a tad less boring :)
+    }
+
+        class VerbumTuMaterClass
+    {
+        //Just here to make the output a tad less boring and refine those latin skills and cred your mom:)
     }
 }
