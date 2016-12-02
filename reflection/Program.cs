@@ -9,23 +9,25 @@ namespace ReflectionTest
     {
         static void Main(string[] args)
         {
-            // Assembly assembly = Assembly.GetExecutingAssembly();
-            Assembly assembly = typeof(Program).GetTypeInfo().Assembly;
-
-            Type[] assemblyTypes = assembly.GetTypes();
-            foreach(Type t in assemblyTypes)
-                Console.WriteLine(t.Name);
+            Type testType = typeof(TestClass);
+            ConstructorInfo ctor = testType.GetConstructor(System.Type.EmptyTypes);
+            if(ctor != null)
+            {
+                object instance = ctor.Invoke(null);
+                MethodInfo methodInfo = testType.GetMethod("TestMethod");
+                Console.WriteLine(methodInfo.Invoke(instance, new object[] { 10 }));
+            }
             Console.ReadKey();
         }
     }
 
-    class DummyClass
+    public class TestClass
     {
-        //Just here to make the output a tad less boring :)
-    }
+        private int testValue = 42;
 
-        class VerbumTuMaterClass
-    {
-        //Just here to make the output a tad less boring and refine those latin skills and cred your mom:)
+        public int TestMethod(int numberToAdd)
+        {
+            return this.testValue + numberToAdd;
+        }
     }
 }
