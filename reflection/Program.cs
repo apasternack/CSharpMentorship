@@ -15,7 +15,7 @@ namespace ReflectionTest
             {
                 object instance = ctor.Invoke(null);
                 MethodInfo methodInfo = testType.GetMethod("TestMethod");
-                Console.WriteLine(methodInfo.Invoke(instance, new object[] { 10 }));
+                Console.WriteLine(methodInfo.Invoke(instance, new object[] { 10, 20 }));
             }
             Console.ReadKey();
         }
@@ -25,9 +25,9 @@ namespace ReflectionTest
     {
         private int testValue = 42;
 
-        public int TestMethod(int numberToAdd)
+        public int TestMethod(int numberToAdd, int numberToMultiply)
         {
-            return this.testValue + numberToAdd;
+            return this.testValue + numberToAdd * numberToMultiply;
         }
     }
 }
