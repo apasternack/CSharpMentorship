@@ -10,10 +10,12 @@ namespace ReflectionTest
         static void Main(string[] args)
         {
             Type testType = typeof(TestClass);
-            ConstructorInfo ctor = testType.GetConstructor(System.Type.EmptyTypes);
-            if(ctor != null)
+            // ConstructorInfo ctor = testType.GetConstructor(System.Type.EmptyTypes);
+            ConstructorInfo ctor = testType.GetConstructor(new[] { typeof(int)});
+            if (ctor != null)
             {
-                object instance = ctor.Invoke(null);
+                object instance = ctor.Invoke(new object[] {420});
+                // object instance = ctor.Invoke(null);
                 MethodInfo methodInfo = testType.GetMethod("TestMethod");
                 Console.WriteLine(methodInfo.Invoke(instance, new object[] { 10, 20 }));
             }
@@ -25,9 +27,21 @@ namespace ReflectionTest
     {
         private int testValue = 42;
 
+        public TestClass()
+        {
+
+        }
+        public TestClass(int x)
+        {
+            testValue = x;
+        }
+
         public int TestMethod(int numberToAdd, int numberToMultiply)
         {
             return this.testValue + numberToAdd * numberToMultiply;
         }
+
+
+
     }
 }
