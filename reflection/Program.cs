@@ -2,46 +2,74 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Reflection;
+using System.IO;
 
-namespace ReflectionTest
+public class Person
 {
-    class Program
+    private int age = -1;
+    private string name = String.Empty;
+
+    public void Load()
     {
-        static void Main(string[] args)
+        if(File.Exists("settings.dat"))
         {
-            Type testType = typeof(TestClass);
-            // ConstructorInfo ctor = testType.GetConstructor(System.Type.EmptyTypes);
-            ConstructorInfo ctor = testType.GetConstructor(new[] { typeof(int)});
-            if (ctor != null)
+            Type type = this.GetType();
+
+            string propertyName, value;
+            string[] temp;
+            char[] splitChars = new char[] { '|' };
+            PropertyInfo propertyInfo;
+
+            string[] settings = File.ReadAllLines("settings.dat");
+            foreach(string s in settings)
             {
-                object instance = ctor.Invoke(new object[] {420});
-                // object instance = ctor.Invoke(null);
-                MethodInfo methodInfo = testType.GetMethod("TestMethod");
-                Console.WriteLine(methodInfo.Invoke(instance, new object[] { 10, 20 }));
+                temp = s.Split(splitChars);
+                if(temp.Length == 2)
+                {
+                    propertyName = temp[0];
+                    value = temp[1];
+                    propertyInfo = type.GetProperty(propertyName);
+                    if(propertyInfo != null)
+                        this.SetProperty(propertyInfo, value);
+                }
             }
-            Console.ReadKey();
         }
     }
 
-    public class TestClass
+    public void Save()
     {
-        private int testValue = 42;
-
-        public TestClass()
+        Type type = this.GetType();
+        PropertyInfo[] properties = type.GetProperties();
+        TextWriter tw = new StreamWriter("settings.dat");
+        foreach(PropertyInfo propertyInfo in properties)
         {
-
+            tw.WriteLine(propertyInfo.Name + "|" + propertyInfo.GetValue(this, null));
         }
-        public TestClass(int x)
+        tw.Close();
+    }
+
+    public void SetProperty(PropertyInfo propertyInfo, object value)
+    {
+        switch(propertyInfo.PropertyType.Name)
         {
-            testValue = x;
+            case "Int32":
+                propertyInfo.SetValue(this, Convert.ToInt32(value), null);
+                break;
+            case "String":
+                propertyInfo.SetValue(this, value.ToString(), null);
+                break;
         }
+    }
 
-        public int TestMethod(int numberToAdd, int numberToMultiply)
-        {
-            return this.testValue + numberToAdd * numberToMultiply;
-        }
+    public int Age
+    {
+        get { return age; }
+        set { age = value; }
+    }
 
-
-
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
     }
 }
